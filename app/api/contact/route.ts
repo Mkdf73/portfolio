@@ -49,6 +49,8 @@ export async function POST(req: Request) {
   });
 
   if (!res.ok) {
+    // Visible dans les logs Vercel (Logs) pour comprendre un refus de Resend.
+    console.error("Resend error", res.status, await res.text().catch(() => ""));
     return NextResponse.json({ error: "send_failed" }, { status: 502 });
   }
   return NextResponse.json({ ok: true });
