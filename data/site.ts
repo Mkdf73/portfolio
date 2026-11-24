@@ -31,7 +31,7 @@ export const site = {
  */
 export const cv: Record<"en" | "fr" | "es", string | null> = {
   en: "/cv-mohamed-kadafi.pdf",
-  fr: null,
+  fr: "/cv-mohamed-kadafi-fr.pdf",
   es: null,
 };
 export const getCv = (lang: "en" | "fr" | "es") => cv[lang] ?? cv.en ?? cv.fr ?? cv.es;
